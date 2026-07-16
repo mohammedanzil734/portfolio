@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Your Name</title>
+  <title>Contact | Mohammed Anzil</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="nav-wrapper">
-      <div class="logo">your_name<span>@</span>portfolio</div>
+      <div class="logo">mohammed_anzil<span>@</span>portfolio</div>
+
       <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
       <ul class="nav-links">
         <li><a href="index.html">home</a></li>
         <li><a href="about.html">about</a></li>
@@ -28,70 +34,117 @@
   </header>
 
   <main>
+
     <section>
       <div class="container contact-grid">
+
         <div>
+
           <p class="eyebrow">// contact</p>
-          <h2 class="section-title">Let's talk</h2>
+          <h2 class="section-title">Let's Connect</h2>
 
           <div class="contact-info-item">
             <p class="label">Email</p>
-            <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>
+              <a href="mailto:anzil.soc@gmail.com">anzil.soc@gmail.com</a>
+            </p>
           </div>
+
           <div class="contact-info-item">
             <p class="label">Phone</p>
-            <p>+91 00000 00000</p>
+            <p>+91 8921629489</p>
           </div>
+
           <div class="contact-info-item">
             <p class="label">Location</p>
-            <p>Your City, Your Country</p>
+            <p>Kochi, Kerala, India</p>
           </div>
 
           <div class="social-links">
-            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://twitter.com/your-handle" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://www.linkedin.com/in/mohammed-anzil-967990332" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+
+            <a href="https://github.com/mohammedanzil734" target="_blank" rel="noopener">
+              GitHub
+            </a>
           </div>
+
         </div>
 
         <form id="enquiry-form" novalidate>
+
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Full Name"
+            >
             <p class="error-message" id="name-error"></p>
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+            >
             <p class="error-message" id="email-error"></p>
           </div>
 
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+            >
             <p class="error-message" id="subject-error"></p>
           </div>
 
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Write your enquiry here..."></textarea>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message..."
+            ></textarea>
             <p class="error-message" id="message-error"></p>
           </div>
 
-          <button type="submit" class="btn btn-solid">Send enquiry</button>
+          <button type="submit" class="btn btn-solid">
+            Send Message
+          </button>
+
           <p class="form-status" id="form-status"></p>
+
         </form>
+
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Your Name. Built with HTML, CSS &amp; JavaScript.</p>
+      <p>&copy; 2026 Mohammed Anzil. Built with HTML, CSS &amp; JavaScript.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    emailjs.init({
+      publicKey: "I68buTwotAMzLhwSN",
+    });
+  </script>
+
   <script src="script.js"></script>
+
 </body>
 </html>
