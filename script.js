@@ -15,65 +15,6 @@ if (navToggle) {
 }
 
 /* =========================================================
-   PART 2: TERMINAL TYPING EFFECT (home page only)
-   This finds the element with id "terminal-output" and types
-   out a list of lines one character at a time, like a real
-   terminal. It's purely visual (decorative), the rest of the
-   site works fine even without it.
-========================================================= */
-const terminalOutput = document.getElementById("terminal-output");
-
-if (terminalOutput) {
-  // Each item is one line of the fake terminal session.
-  // "prompt" lines look like a typed command, "output" lines
-  // look like the computer's response.
-  const lines = [
-    { type: "prompt", text: "whoami" },
-    { type: "output", text: "Anzil" },
-    { type: "prompt", text: "cat role.txt" },
-    { type: "output", text: "Cyber Security Student" },
-    { type: "prompt", text: "cat status.txt" },
-    { type: "output", text: "Open to entry-level opportunities" }
-  ];
-
-  let lineIndex = 0;
-  let charIndex = 0;
-
-  function typeNextChar() {
-    // Stop once every line has been fully typed
-    if (lineIndex >= lines.length) return;
-
-    const currentLine = lines[lineIndex];
-
-    // Start a new line container the first time we type on it
-    if (charIndex === 0) {
-      const lineEl = document.createElement("div");
-      lineEl.className = "line";
-      lineEl.innerHTML =
-        currentLine.type === "prompt"
-          ? '<span class="prompt">$ </span><span class="typed"></span>'
-          : '<span class="output typed"></span>';
-      terminalOutput.appendChild(lineEl);
-    }
-
-    const activeLine = terminalOutput.lastElementChild.querySelector(".typed");
-    activeLine.textContent += currentLine.text[charIndex];
-    charIndex++;
-
-    if (charIndex < currentLine.text.length) {
-      setTimeout(typeNextChar, 35); // typing speed per character
-    } else {
-      // Move on to the next line after a short pause
-      charIndex = 0;
-      lineIndex++;
-      setTimeout(typeNextChar, 400);
-    }
-  }
-
-  typeNextChar();
-}
-
-/* =========================================================
    PART 3: CONTACT FORM VALIDATION (contact page only)
    Checks each field when the form is submitted. If something
    is wrong, we show an error message under that field and stop
